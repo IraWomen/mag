@@ -263,9 +263,9 @@ window.Game = (function () {
    */
   LevelsInitialize[Level.INTRO] = function (state) {
     state.objects.push(
-        // Установка персонажа в начальное положение. Он стоит в крайнем левом
-        // углу экрана, глядя вправо. Скорость перемещения персонажа на этом
-        // уровне равна 2px за кадр.
+    // Установка персонажа в начальное положение. Он стоит в крайнем левом
+    // углу экрана, глядя вправо. Скорость перемещения персонажа на этом
+    // уровне равна 2px за кадр.
         {
           direction: Direction.RIGHT,
           height: window.GameConstants.Wizard.getHeight(window.GameConstants.Wizard.width),
@@ -370,9 +370,6 @@ window.Game = (function () {
       restart = typeof restart === 'undefined' ? true : restart;
 
       if (restart || !this.state) {
-        // сбросить кэш при перезагрузке уровня
-        this._imagesArePreloaded = void 0;
-
         // При перезапуске уровня, происходит полная перезапись состояния
         // игры из изначального состояния.
         this.state = this.getInitialState();
@@ -584,7 +581,7 @@ window.Game = (function () {
         this.state.objects.push({
           direction: me.direction,
           height: window.GameConstants.Fireball.size,
-          speed: window.GameConstants.Fireball.speed(!!(me.direction & Direction.LEFT)),
+          speed: window.GameConstants.Fireball.speed(me.direction & Direction.LEFT),
           sprite: SpriteMap[ObjectType.FIREBALL],
           type: ObjectType.FIREBALL,
           width: window.GameConstants.Fireball.size,
@@ -810,16 +807,8 @@ window.Game = (function () {
   Game.Verdict = Verdict;
 
   var game = new Game(document.querySelector('.demo'));
-
-  window.restartGame = function (wizardRightImage, wizardLeftImage) {
-    SpriteMap[ObjectType.ME].url = wizardRightImage;
-    SpriteMap[ObjectType.ME + REVERSED].url = wizardLeftImage;
-
-    game.initializeLevelAndStart();
-    game.setGameStatus(Verdict.INTRO);
-  };
-
-  window.restartGame('img/wizard.gif', 'img/wizard-reversed.gif');
+  game.initializeLevelAndStart();
+  game.setGameStatus(Verdict.INTRO);
 
   return game;
 })();

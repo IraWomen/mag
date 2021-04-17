@@ -562,7 +562,7 @@ input[type=radio]:checked + .review-mark-label {
 
   position: absolute;
   left: 50%;
-  top: 80px;
+  top: 100px;
   transform: translateX(-50%);
 
   background: #89a1fd;
@@ -585,6 +585,10 @@ input[type=radio]:checked + .review-mark-label {
 
 .setup-open-icon:hover {
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.setup-open:focus .setup-open-icon {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
 }
 
 .setup-title {
@@ -619,14 +623,6 @@ input[type=radio]:checked + .review-mark-label {
   font-weight: 900;
 
   width: 500px;
-}
-
-.setup-user-name:valid {
-  border: 0;
-}
-
-.setup-user-name:invalid {
-  border: 2px solid red;
 }
 
 .setup-user-name:focus {

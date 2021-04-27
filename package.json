@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "description": "Учебный проект «Код и Магия» от HTML Academy",
-  "author": "Александра Ларина",
+  "author": "Ирина Смирнова",
   "repository": {
     "type": "git",
-    "url": "git@github.com:htmlacademy-javascript/422049-code-and-magick.git"
+    "url": ""
   },
   "bugs": {
-    "url": "https://github.com/htmlacademy-javascript/422049-code-and-magick/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/htmlacademy-javascript/422049-code-and-magick",
+  "homepage": "",
   "devDependencies": {
     "eslint": "5.13.0",
     "eslint-config-htmlacademy": "0.5.2"
